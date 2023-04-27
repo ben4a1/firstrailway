@@ -4,8 +4,6 @@ import by.paramonov.firstrailway.entity.User;
 import by.paramonov.firstrailway.exception.ResourceNotFoundException;
 import by.paramonov.firstrailway.repository.UserJpaRepository;
 import by.paramonov.firstrailway.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +16,9 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class UserController {
 
-    private final UserJpaRepository userRepository;
+    private final UserRepository userRepository;
 
-    public UserController(UserJpaRepository userRepository) {
+    public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

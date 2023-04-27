@@ -2,17 +2,19 @@ package by.paramonov.firstrailway.repository;
 
 import by.paramonov.firstrailway.entity.User;
 import jakarta.persistence.EntityManager;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
+@Repository
 public class UserRepository{
 
     private final EntityManager entityManager;
+
+    public UserRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     public User save(User entity) {
         entityManager.persist(entity);
